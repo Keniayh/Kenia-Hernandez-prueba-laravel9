@@ -19,3 +19,13 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get("/", [PromocionController::class, "index"])->name("promocion.index");
+
+Route::get('/promociones/create', [PromocionController::class, 'create'])->name('promocion.create');
+
+Route::post('/promociones', [PromocionController::class, 'store'])->name('promocion.store');
+
+//Route::post('/promociones/edit', [PromocionController::class, 'update'])->name('promocion.update');
+
+Route::put('/promociones/{id}/edit', [PromocionController::class, 'update'])->name('promocion.update');
+
+Route::delete('/promociones/{id}', [PromocionController::class, 'destroy'])->name('promocion.destroy');
