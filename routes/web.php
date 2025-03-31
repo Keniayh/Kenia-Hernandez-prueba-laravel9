@@ -14,11 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get("/", [PromocionController::class, "index"])->name("promocion.index");
+Route::get('/promociones', function () {
+    return view('promociones'); // Carga la vista productos.blade.php
+})->name('promociones');
+
+
+Route::get('/promociones', [PromocionController::class, 'index'])->name('promocion.index');
+// Route::get("/", [PromocionController::class, "index"])->name("promocion.index");
 
 Route::get('/promociones/create', [PromocionController::class, 'create'])->name('promocion.create');
 
@@ -29,3 +35,5 @@ Route::post('/promociones', [PromocionController::class, 'store'])->name('promoc
 Route::put('/promociones/{id}/edit', [PromocionController::class, 'update'])->name('promocion.update');
 
 Route::delete('/promociones/{id}', [PromocionController::class, 'destroy'])->name('promocion.destroy');
+
+

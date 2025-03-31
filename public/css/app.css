@@ -1,0 +1,108 @@
+body {
+    background-color: #e9f4ff;
+}
+
+/* Sidebar */
+.sidebar {
+    height: 100vh;
+    background: #86c3ff;
+    color: white;
+    padding-top: 20px;
+    position: relative;
+    min-height: 100vh;
+    align-content: center;
+}
+
+/* Tamaño de fuente adaptable */
+h1 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem); /* Escala entre 1.5rem y 2.5rem */
+    padding: 1.5vw 2vw;
+}
+
+/* Botón */
+button.añadir {
+    padding: 1vw;
+    background-color: #3e9eff;
+    color: #e9f4ff;
+    border-radius: 30px;
+    border: none;
+    margin: 1vw 0;
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
+}
+
+/* Sidebar links */
+.sidebar a {
+    color: rgb(10, 10, 10);
+    display: block;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    padding: 0.8vw 1.2vw;
+}
+
+.sidebar a:hover {
+    background: #495057;
+    border-radius: 5px;
+    color: aliceblue;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    background: #495057;
+    border: none;
+    z-index: 1050;
+}
+
+.dropdown-menu a {
+    color: white;
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+}
+
+.dropdown-menu a:hover {
+    background: #495057;
+}
+
+/* Tarjetas de módulos */
+.module-card {
+    text-align: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.module-card img {
+    width: 50px; /* Ajustado para mejor proporción */
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Menú de navegación */
+.menu {
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+    text-align: center;
+}
+
+/* Vista promociones */
+.table-cell-scroll {
+    max-width: 250px; /* Reducido para mejorar adaptación */
+    max-height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* Tablas */
+th {
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+}

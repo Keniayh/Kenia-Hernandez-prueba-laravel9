@@ -9,7 +9,7 @@ class PromocionController extends Controller
 {
     public function index() {
         $datos=DB::select("select * from promociones ");
-        return view("welcome")->with("datos", $datos);
+        return view("promociones")->with("datos", $datos);
     }
 
     // Método para mostrar el formulario de creación
@@ -71,7 +71,7 @@ class PromocionController extends Controller
             return back()->with("Incorrecto", "Hubo un error en la modificación de datos, intente nuevamente");
         }
     }
-    
+
     public function destroy($id) {
         try {
             $sql = DB::delete("DELETE FROM promociones WHERE id = ?", [$id]);
