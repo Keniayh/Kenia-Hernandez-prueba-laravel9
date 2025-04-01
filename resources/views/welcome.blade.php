@@ -37,7 +37,6 @@
 
             <!-- Contenido principal -->
             <main class="col-md-10 col-lg-10 px-4">
-                <h2 class="text-center my-4">Selecciona un Módulo</h2>
                 <div class="row g-4" id="modulos-container">
                 </div>
             </main>
@@ -51,8 +50,12 @@
             contenedor.innerHTML = ""; // Limpiar módulos anteriores
 
             let modulos = [];
+            let enunciado = "";
 
             if (tipo === "usuario") {
+
+                enunciado = '<h2 class="text-center my-4">Selecciona un Módulo</h2>';
+
                 modulos = [{
                         nombre: "Módulo 1",
                         imagen: "modulo1.png",
@@ -85,74 +88,82 @@
                     }
                 ];
             } else if (tipo === "admin") {
+
+                enunciado = '<h2 class="text-center my-4">Selecciona un Módulo</h2>';
+
                 modulos = [{
                         nombre: "Usuarios",
-                        imagen: "modulo1.png",
+                        imagen: '<i class="fa-solid fa-user fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "enlace1.html"
                     },
                     {
                         nombre: "Usuarios clientes",
-                        imagen: "modulo2.png",
+                        imagen: '<i class="fa-solid fa-house-user fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "enlace2.html"
                     },
                     {
                         nombre: "Direcciones de usuarios",
-                        imagen: "modulo3.png",
+                        imagen: '<i class="fa-solid fa-location-dot fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "enlace3.html"
                     },
                     {
                         nombre: "Tiendas",
-                        imagen: "modulo4.png",
-                        enlace: "enlace4.html"
+                        imagen: '<i class="fa-solid fa-store fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
+                        enlace: "{{ route('tienda.index') }}"
                     },
                     {
                         nombre: "Diastancia de tiendas",
-                        imagen: "modulo5.png",
+                        imagen: '<i class="fa-solid fa-map-location-dot fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "enlace5.html"
                     },
                     {
                         nombre: "Promociones",
-                        imagen: '<i class="fa-solid fa-percent fa-2x" style="color: #74C0FC;"></i>',
+                        imagen: '<i class="fa-solid fa-percent fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "{{ route('promocion.index') }}"
                     },
                     {
                         nombre: "Promociones de tiendas",
-                        imagen: "modulo7.png",
-                        enlace: "enlace7.html"
+                        imagen: '<i class="fa-solid fa-cash-register fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
+                        enlace: "{{ route('tienda.index') }}"
                     },
                     {
                         nombre: "Productos",
-                        imagen: "modulo8.png",
+                        imagen: '<i class="fa-solid fa-boxes-stacked fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "enlace8.html"
                     },
                     {
                         nombre: "Productos de tiendas",
-                        imagen: "modulo9.png",
+                        imagen: '<i class="fa-solid fa-cart-flatbed fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "enlace9.html"
                     },
                     {
                         nombre: "Carritos",
-                        imagen: "modulo10.png",
+                        imagen: '<i class="fa-solid fa-cart-shopping fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "enlace10.html"
                     },
                     {
                         nombre: "Pedidos",
-                        imagen: "modulo11.png",
+                        imagen: '<i class="fa-solid fa-clipboard-list fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "enlace11.html"
                     },
                     {
-                        nombre: "Estado de pedidos",
-                        imagen: "modulo12.png",
+                        nombre: "Estado de los pedidos",
+                        imagen: '<i class="fa-solid fa-clipboard-list fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "enlace12.html"
                     },
                     {
                         nombre: "Productos pedidos",
-                        imagen: "modulo13.png",
+                        imagen: '<i class="fa-solid fa-truck-ramp-box fa-3x" style="color: #74C0FC; margin:1vw;"></i>',
                         enlace: "enlace13.html"
                     }
                 ];
             }
 
+            if (enunciado) {
+                const enunciadoContenedor = document.createElement('div');
+                enunciadoContenedor.innerHTML = enunciado;
+                contenedor.appendChild(enunciadoContenedor);
+            }
             // Generar módulos dinámicamente
             modulos.forEach(modulo => {
                 const col = document.createElement('div');

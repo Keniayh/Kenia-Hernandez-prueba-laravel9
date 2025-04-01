@@ -67,7 +67,7 @@
         <button class="añadir" data-bs-toggle="modal" data-bs-target="#staticBackdropPromo">Añadir
             Promoción</button>
         <table id="tabla" class="table table-striped table-hover table-bordered align-middle">
-            <thead class="table-dark text-center">
+            <thead class="table-primary text-center">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">ESTADO</th>
